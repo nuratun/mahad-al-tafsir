@@ -24,7 +24,7 @@ export default function VideoList({ children, data = {} }) {
   useEffect(() => {
     window.addEventListener("load", handleResize, false);
     executeScroll();
-  });
+  }, []);
 
   const handleResize = () => {
     if (vidListref.current) {
