@@ -22,10 +22,10 @@ export default function VideoList({ children, data = {} }) {
     window.addEventListener("resize", handleResize, false);
   }, []);
   useEffect(() => {
-    if (currentVidRef.current) {
+    setTimeout( () => {
       setHeight(currentVidRef.current?.clientHeight);
-      executeScroll();
-    }
+    }, 1000 )
+    executeScroll();
   });
 
   const handleResize = () => {
