@@ -25,6 +25,7 @@ export default function VideoList({ children, data = {} }) {
     setTimeout(() => {
       setHeight(currentVidRef.current?.clientHeight);
     }, 1500);
+    console.log(height)
     executeScroll();
   });
 
