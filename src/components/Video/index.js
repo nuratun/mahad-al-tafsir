@@ -7,8 +7,8 @@ import clsx from "clsx";
 export default function VideoList({ children, data = {} }) {
   const [itemIndex, setItemIndex] = useState(0);
   const [vidItem, setvidItem] = useState({});
-  const [height, setHeight] = useState(100);
-  const vidListref = useRef(null);
+  const [height, setHeight] = useState(240);
+  const vidListref = useRef(240);
   const currentVidRef = useRef(null);
   const currentVid = useRef(null);
   const executeScroll = () => currentVid.current.scrollIntoView();
