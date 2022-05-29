@@ -8,9 +8,9 @@ export default function VideoList({ children, data = {} }) {
   const [itemIndex, setItemIndex] = useState(0);
   const [vidItem, setvidItem] = useState({});
   const [height, setHeight] = useState(240);
-  const vidListref = useRef(240);
-  const currentVidRef = useRef(null);
-  const currentVid = useRef(null);
+  const vidListref = useRef(0);
+  const currentVidRef = useRef(0);
+  const currentVid = useRef(0);
   const executeScroll = () => currentVid.current.scrollIntoView();
 
   useEffect(() => {
@@ -24,12 +24,10 @@ export default function VideoList({ children, data = {} }) {
   useEffect(() => {
     window.addEventListener("load", handleResize, false);
     executeScroll();
-  }, []);
+  });
 
   const handleResize = () => {
-    if (vidListref.current) {
-      setHeight(currentVidRef.current?.clientHeight);
-    }
+    setHeight(currentVidRef.current?.clientHeight);
   };
   data.items.sort((a, b) => {
     const orderNoArrayA = a.snippet.title.split(" ")[0].split(".");
