@@ -27,7 +27,7 @@ export default function VideoList({ children, data = {} }) {
     }, 1500);
     console.log(height)
     executeScroll();
-  });
+  }, [height]);
 
   const handleResize = () => {
     setHeight(currentVidRef.current?.clientHeight);
